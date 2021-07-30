@@ -25,7 +25,6 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // Add your functions below:
 // validatedCred reverses the card numbers for easier checking. 
-
 const validatedCred = array => {
   let reversedCard = array.slice().reverse(); 
   const arrlen = array.length;
