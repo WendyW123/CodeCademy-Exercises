@@ -19,6 +19,7 @@ const pAequorFactory = (n, dnaArray) => {
     specimenNum: n,
     dna: dnaArray,
     
+    // Randomly selects a base in the dna sequence and replace it with a randomly generated base, not equal to itself
     mutate() {
       const dnaCopy = dnaArray.slice()
       let mutationIndex = Math.floor(Math.random() * 15);
@@ -30,6 +31,7 @@ const pAequorFactory = (n, dnaArray) => {
       return dnaCopy;
     },
     
+    // Compares the current DNA sequence with one that is passed in, bases in the same indexed positions. Then, a percentage of likeness is calculated. 
     compareDNA(pAequorObj) {
       let commonCount = 0;
       for (let i = 0; i < 15; i++) {
@@ -41,6 +43,7 @@ const pAequorFactory = (n, dnaArray) => {
       console.log(`specimen #${this.specimenNum} and specimen #${pAequorObj.specimenNum} have ${percentCommon}% DNA in common.`)
     },
 
+    // The DNA sequence enables good survival if at least 60% of its bases are 'C' or 'G'. This method returns true if the threshhold is met.
     willLikelySurvive() {
       let count = 0;
       for (let base of dnaArray) {
