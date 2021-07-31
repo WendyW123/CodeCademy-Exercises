@@ -60,14 +60,14 @@ const pAequorFactory = (n, dnaArray) => {
   }
 }
 
-// This function randomly creates a number of pAequor DNA sequences that are likely to survive. User specifies the number wanted.
+// This function randomly creates a number of pAequor instances that are likely to survive. User specifies the number wanted.
 const likelySurviveList = num => {
   const list = [];
   let i = 0; n = 1; // i is index of the last DNA added to the list; n is the current specimen number.
   while (i < num) {
     let sample = pAequorFactory(n, mockUpStrand());
     if (sample.willLikelySurvive()===true) {
-      list.push(sample.dna);
+      list.push(sample);
       i++;
     }
     n++;
